@@ -1,0 +1,7 @@
+// should be copied to `env-config.js` for each specific environnement
+window.ENV_CONFIG = {
+    name: 'dev',
+    minify: false,
+    debug: true,
+    // can be extended with environment specific config (analytics tracker, etc...)
+};
