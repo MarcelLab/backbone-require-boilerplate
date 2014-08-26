@@ -3,9 +3,9 @@ define(
         'jquery',
         'underscore',
         'backbone',
-        'app-config'
-        // text!templates/example.tmpl // pour appeler un template
-    ], function($, _, Backbone, appConfig) {
+        'app-config',
+        'text!templates/example.tmpl' // pour appeler un template
+    ], function($, _, Backbone, appConfig, tmpl) {
 
         'use strict';
 
