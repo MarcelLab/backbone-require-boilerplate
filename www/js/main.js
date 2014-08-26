@@ -9,9 +9,9 @@ define(
 
         'use strict';
 
-        console.log($);
-        console.log(_);
-        console.log(Backbone);
+        // console.log($);
+        // console.log(_);
+        // console.log(Backbone);
 
         // deal with envConfig
         var envConfig = _.extend({}, window.ENV_CONFIG);
@@ -47,19 +47,6 @@ define(
                     console[method] = noop;
                 }
             }
-
-            // syslog
-            var syslog;
-            if (debug) {
-                syslog = function(msg, color) {
-                    var color = color || 'green';
-                    console.log('%cLOG> ' + msg, 'color:' + color);
-                }
-            } else {
-                syslog = noop;
-            }
-            // expose globally
-            window.syslog = syslog;
         }(envConfig.debug));
 
         // declare polyfills, _.mixin here
@@ -72,6 +59,8 @@ define(
         });
 
         $(document).ready(function() {
+            var exampleView = _.template(tmpl, { name: 'Backbone / RequireJS boilerplate' });
+            $('body').append(exampleView);
             // app.initialize(appConfig, envConfig)   // create router etc...
             // Backbone.history.start();
         });
